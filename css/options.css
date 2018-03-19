@@ -1,0 +1,23 @@
+body {
+	width: auto !important;
+	background: #eee;
+}
+
+input.domain {
+	display: block;
+	width: 99%;
+}
+
+#add {
+	border: 0;
+	color: #fff;
+	background: #c0c0c0;
+	font: normal normal normal 1.3em/1.5em Arial, sans-serif;
+	cursor: pointer;
+}
+
+#debug {
+	display: none;
+	
+	font: normal normal normal 1.3em/1.5em monospace;
+}

@@ -1,25 +1,32 @@
-<!DOCTYPE html>
-
+<!DOCTYPE HTML>
+<head>
 <html>
-    <head>
-        <title>
-            PageFontStyle
-        </title>
-        <script src="jquery.js"></script>
-        <script src="jscolor.js"></script>
-        <script src="popup.js"></script>
-    
-        <style>
-            body{
-                min-width: 250px;
-                min-height: 150px;
-            }
-        </style>
-    </head>
+	<meta charset="utf-8">
+	<title>Highlighter - Popup</title>
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script type="text/javascript" src="js/jquery-ui.min.js"></script>
+	<script type="text/javascript" src="js/jquery.tagsinput.min.js"></script>
+	<link href="css/reset.css" rel="stylesheet" type="text/css">
+	<link href="css/popup.css" rel="stylesheet" type="text/css">
+	<link href="css/jquery.tagsinput.css" rel="stylesheet" type="text/css">
+	<link href="css/highlight.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+	<form action="">
+		<p>
+			<input class="domain" value="All domains" disabled="disabled">
+			<input class="keywords" id="keywords" value="">
+		</p>
+		<p>
+			<a href="#" id="unhighlight" class="toggle">Hide highlights</a>
+			<a href="#" id="rehighlight" class="toggle">Show highlights</a>
+		</p>
 
-    <body>
-        <input type="text" id="fontColor" class="jscolor" value="ffcc00"/>
-        <input type="submit" id="btnChange" value="Change"/>
+		<div id="message"></div>
+	</form>
 
-    </body>
+	<button id="submit">Save</button>
+
+	<script src="js/popup.js"></script>
+</body>
 </html>

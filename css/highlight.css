@@ -1,0 +1,22 @@
+.highlighter {
+	color: #000 !important;
+	text-shadow: none !important;
+	font-weight: inherit !important;
+
+/*	padding: 2px 1px 0 1px !important;
+	margin: -2px -1px 0 -1px !important;*/
+	display: inline-block !important;
+	
+	background-color: #FF6 !important;
+}
+
+.crayon-yellow	{ background-color: #FF6 !important; }
+.crayon-blue	{ background-color: #6CF !important; }
+.crayon-green	{ background-color: #3F3 !important; }
+.crayon-red		{ background-color: #F66 !important; }
+.crayon-turq	{ background-color: #0FC !important; }
+.crayon-orange	{ background-color: #F80 !important; }
+.crayon-purple	{ background-color: #C6F !important; }
+.crayon-pink	{ background-color: #F9D !important; }
+.crayon-lilac	{ background-color: #F6F !important; }
+.crayon-silver	{ background-color: #CCC !important; }
