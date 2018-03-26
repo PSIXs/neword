@@ -1,59 +1,39 @@
 {
-	"name": "Highlighter",
-	"description": "Highlights a user-defined list of keywords on all web pages.",
-	"version": "1.0.0",
+    "manifest_version": 2,
+    "name": "NeWoRdS",
+    "version": "1.0",
+    "description": "Changes font style on a specific page",
+    "icons": {
+        "128": "icon128.png",
+        "48": "icon48.png",
+        "16": "icon16.png"
+    },
+    "browser_action": {
+        "default_icon": "icon16.png",
+        "default_popup": "popup.html",
+        "default_title": "PageFontStyle"
+    },
+    "options_page": "options.html",
+    "background": {
+        "scripts" : ["background.js"],
+        "persistent" : false
+    },
+    "content_scripts": [
+        {
+            "matches": ["https://*/*", "http://*/*", "<all_urls>"
+        ],
+            "js": ["jquery.js", "content.js"],
+            "css": ["content.css"]
+        }
+    ],
+    "permissions": [
+        "tabs",
+        "notifications",
+        "storage",
+        "contextMenus",
+        "https://*/*",
+        "http://*/*",
+        "<all_urls>"
 
-	"permissions": [
-		"storage",
-		"tabs",
-		"contextMenus"
-	],
-
-	"options_page": "options.html",
-	
-	"background": {
-		"scripts": [
-			"js/background.js"
-		]
-	},
-
-	"page_action": {
-		"default_icon": {
-			"16": "img/icon16.png",
-			"19": "img/icon19.png",
-			"38": "img/icon38.png",
-			"48": "img/icon48.png",
-			"128": "img/icon128.png"
-		},
-		"default_title": "Highlighter",
-		"default_popup": "popup.html"
-	},
-
-	"content_scripts": [ {
-		"css": [
-			"css/highlight.css"
-		],
-		"js": [
-			"js/jquery.min.js",
-			"js/jquery.highlightregex.min.js",
-			"js/highlight.regex.min.js"
-		],
-		"matches": [
-			"http://*/*",
-			"https://*/*",
-			"<all_urls>"
-		],
-		"run_at" : "document_idle",
-		"all_frames" : false
-	} ],
-
-	"icons": {
-		"16": "img/icon16.png",
-		"19": "img/icon19.png",
-		"38": "img/icon38.png",
-		"48": "img/icon48.png",
-		"128": "img/icon128.png"
-	},
-
-	"manifest_version": 2
+    ]
 }
