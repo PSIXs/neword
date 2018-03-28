@@ -15,14 +15,13 @@
     },
     "options_page": "options.html",
     "background": {
-        "scripts" : ["background.js"],
+        "scripts" : ["neword_core.js", "background.js"],
         "persistent" : false
     },
     "content_scripts": [
         {
-            "matches": ["https://*/*", "http://*/*", "<all_urls>"
-        ],
-            "js": ["jquery.js", "content.js"],
+            "matches": ["https://*/*", "http://*/*", "<all_urls>", "file://*/*"],
+            "js": ["jquery.js", "neword_core.js", "content.js"],
             "css": ["content.css"]
         }
     ],
@@ -34,6 +33,5 @@
         "https://*/*",
         "http://*/*",
         "<all_urls>"
-
     ]
 }

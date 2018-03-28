@@ -21,35 +21,32 @@ function checkExistence(word, dict) {
 
 
 function addNewWords(words, dict) {
+    dict = [words];
+
     return dict;
 }
 
-// 
-function getData(data_name, func) {
-    chrome.storage.sync.get([data_name], function(data) {
-        func(data[data_name]);
-    });
+
+function parseData(words) {
+    return words;
 }
 
 // Add word to Dictionary storage 
 function addWordsToDict(words) 
 {
-
+    var parsedData = parseData(words);
     if (checkValidity(words) == false) {
         show_notification("Some words are not valid", "Please check and verify if words are an English word");
         return false;
     }
-    getData('neword_dictionary', function(current_dictionary){
-        
-    });
 
-    chrome.storage.sync.get(['neword_dictionary'], function (data){
+    chrome.storage.sync.get(['neword_user_dictionary'], function (data){
         var current_dictionary = [];
-        if (data.neword_dictionary) {
-            current_dictionary = data.neword_dictionary;
-        }
+        if (data.neword_user_dictionary) {
+            current_dictionary = data.neword_user_dictionary;
+        }                                       
         current_dictionary = addNewWords (words, current_dictionary);
-        chrome.storage.sync.set({'neword_dictionary': current_dictionary}, function(){});
+        chrome.storage.sync.set({'neword_user_dictionary': current_dictionary}, function(){});
     });
     
     show_notification("Words have been successfully added", words);

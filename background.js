@@ -1,5 +1,5 @@
 var contextMenuItem = {
-    "id": "add_word",
+    "id": "ds",
     "title": "Add to dictionary", 
     "contexts": ["selection"]
 };
@@ -10,6 +10,8 @@ chrome.contextMenus.onClicked.addListener
 (
     function(clickData) 
     {
-        alert (clickData.selectionText);
+        // alert (clickData.selectionText);
+        console.log ("Adding selected words to dictionary");
+        addWordsToDict(clickData.selectionText);
     }
 );

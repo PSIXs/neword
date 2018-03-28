@@ -16,4 +16,7 @@ $(function() {
             show_notification("Language level was changed!", "New language level is " + selected_user_language_level_text);
         });
     });
+    chrome.storage.sync.get(["neword_user_dictionary"], function(data){ 
+        $('#current_dictionary').text(data.neword_user_dictionary);
+    });
 });
