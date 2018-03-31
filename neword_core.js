@@ -21,8 +21,7 @@ function checkExistence(word, dict) {
 
 
 function addNewWords(words, dict) {
-    dict = [words];
-
+    dict.push(words);
     return dict;
 }
 

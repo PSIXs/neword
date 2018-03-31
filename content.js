@@ -16,19 +16,11 @@ chrome.storage.sync.get(['neword_user_dictionary', 'neword_user_language_level',
         current_user_language = data.neword_user_language;
     if(data.neword_user_language_level)
         current_user_language_level = data.neword_user_language_level;
-    /*
-    current_user_dictionary = [
-        {"word": 'now', "state": 'new'},
-        {"word": 'hello', "state": 'new'},
-        {"word": 'forget', "state": 'new'},
-        {"word": 'great', "state": 'new'},
-        {"word": 'constructor', "state": 'new'}  
-    ];*/
-    
+
     for (var index in current_user_dictionary) {
         word_processor(current_user_dictionary[index]);
     }
+    
     document.body.innerHTML = whole_page;
-
 });
 
