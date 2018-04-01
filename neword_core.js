@@ -21,8 +21,7 @@ function checkExistence(word, dict) {
 
 
 function addNewWords(words, dict) {
-    dict.push(words);
-    return dict;
+    return dict.concat(words);
 }
 
 
@@ -39,6 +38,8 @@ function addWordsToDict(words)
         return false;
     }
 
+    
+
     chrome.storage.sync.get(['neword_user_dictionary'], function (data){
         var current_dictionary = [];
         if (data.neword_user_dictionary) {
@@ -46,9 +47,16 @@ function addWordsToDict(words)
         }                                       
         current_dictionary = addNewWords (words, current_dictionary);
         chrome.storage.sync.set({'neword_user_dictionary': current_dictionary}, function(){});
+        chrome.tabs.query({active: true, currentWindow: true}, function(tabs){
+            chrome.tabs.sendMessage(tabs[0].id, {
+                "message": "newWordAdded",
+                "keywords": words,
+            });
+        });
+            
     });
     
-    show_notification("Words have been successfully added", words);
+    show_notification("Words have been successfully added", words.toString());
     return true;
 }
 

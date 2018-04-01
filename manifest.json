@@ -21,7 +21,7 @@
     "content_scripts": [
         {
             "matches": ["https://*/*", "http://*/*", "<all_urls>", "file://*/*"],
-            "js": ["jquery.js", "neword_core.js", "content.js"],
+            "js": ["jquery.js", "content.js"],
             "css": ["content.css"]
         }
     ],
