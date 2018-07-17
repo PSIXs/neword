@@ -1,3 +1,4 @@
+[![codebeat](https://codebeat.co/badges/6eb4d97c-36f9-4b91-906f-ae4a8b38af30)](https://codebeat.co/projects/github-com-psixs-neword-master)
 # neword
 An Application which highlights words (based on your language level) on any website you visit (or your selected websites).
 Words from word list (based on your language level which you choose) are highlighted with three different colors:
