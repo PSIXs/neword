@@ -1,8 +1,8 @@
 {
     "manifest_version": 2,
-    "name": "NeWoRdS",
+    "name": "NeWords",
     "version": "1.0",
-    "description": "Changes font style on a specific page",
+    "description": "NeW Way to practise NeWords",
     "icons": {
         "128": "icon128.png",
         "48": "icon48.png",
@@ -11,7 +11,7 @@
     "browser_action": {
         "default_icon": "icon16.png",
         "default_popup": "popup.html",
-        "default_title": "PageFontStyle"
+        "default_title": "NeWords"
     },
     "options_page": "options.html",
     "background": {
