@@ -16,6 +16,14 @@ $(function() {
             show_notification("Language level was changed!", "New language level is " + selected_user_language_level_text);
         });
     });
+    $('#add_words').click(function(){
+        if (this.id == 'add_words') {
+            var selected_new_words = $('#new_words').val();
+            chrome.storage.sync.set({"neword_user_new_words" : selected_new_words}, function() {
+                show_notification("New words list was updated", "Current new words list is " + selected_new_words);
+            });
+        }
+    });
     chrome.storage.sync.get(["neword_user_dictionary"], function(data){ 
         $('#current_dictionary').text(data.neword_user_dictionary);
     });
