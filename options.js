@@ -20,7 +20,7 @@ $(function() {
         if (this.id == 'add_words') {
             var selected_new_words = $('#new_words').val();
             chrome.storage.sync.set({"neword_user_new_words" : selected_new_words}, function() {
-                show_notification("New words list was updated", "Current new words list is " + selected_new_words);
+                addWordsToDict(selected_new_words)
             });
         }
     });
