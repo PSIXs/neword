@@ -1,47 +1,60 @@
 <!DOCTYPE html>
 <href>
+
     <head>
         <title> Options - NeWoRdS </title>
-        <script src="jquery.js"></script>
-        <script src="neword_core.js"></script>
-        <script src="options.js"></script>
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="stylesheet" href="assets/css/main.css">
     </head>
 
     <body>
-        
+
         <h3>
-            Add words 
+            Add words
         </h3>
         <textarea id="new_words"></textarea>
         <button id="add_words">
             Submit
         </button>
-        
-        <h3> 
-                Choose your language
+
+        <h3>
+            Choose your language
         </h3>
         <select id="lang_user">
-                    <option value="russian">Russian</option>
-                    <option value="kyrgyz">Kyrgyz</option>
+            <option value="russian">Russian</option>
+            <option value="kyrgyz">Kyrgyz</option>
         </select>
-        
+
         <h3>
             Choose your level of English or add your own dictionary:
         </h3>
         <select id="lang_level">
-                <option value="beginner">Beginner</option>
-                <option value="medium">Medium</option>
-                <option value="upper">Upper</option>
+            <option value="beginner">Beginner</option>
+            <option value="medium">Medium</option>
+            <option value="upper">Upper</option>
         </select>
-        
+
         <h3>
             Current Words
         </h3>
-        <p id="current_dictionary"></p>
+        <table id="dict_tbl" style="margin-bottom: 0px;">
+            <tr>
+                <th>Word</th>
+                <th></th>
+            </tr>
+        </table>
+        <button id="remove_words">
+            Remove
+        </button>
+        </div>
 
-        
-    </div>              
-    
+        <!-- Scripts -->
+        <script src="assets/js/jquery.min.js"></script>
+        <script src="assets/js/skel.min.js"></script>
+        <script src="assets/js/util.js"></script>
+        <script src="assets/js/main.js"></script>
+        <script src="neword_core.js"></script>
+        <script src="options.js"></script>
     </body>
 </href>
