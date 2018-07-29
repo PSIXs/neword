@@ -4,7 +4,7 @@ function show_notification(title, msg) {
         type: 'basic',
         iconUrl: 'icon48.png',
         title: title,
-        message: msg    
+        message: msg
     };
     chrome.notifications.create('limitNotif', notifOptions);
 }
@@ -30,24 +30,23 @@ function parseData(words) {
 }
 
 // Add word to Dictionary storage 
-function addWordsToDict(words) 
-{
+function addWordsToDict(words) {
     var parsedData = parseData(words);
     if (checkValidity(words) == false) {
         show_notification("Some words are not valid", "Please check and verify if words are an English word");
         return false;
     }
 
-    
 
-    chrome.storage.sync.get(['neword_user_dictionary'], function (data){
+
+    chrome.storage.sync.get(['neword_user_dictionary'], function (data) {
         var current_dictionary = [];
         if (data.neword_user_dictionary) {
             current_dictionary = data.neword_user_dictionary;
-        }                                       
-        current_dictionary = addNewWords (words, current_dictionary);
-        chrome.storage.sync.set({'neword_user_dictionary': current_dictionary}, function(){});
-        chrome.tabs.query({active: true, currentWindow: true}, function(tabs){
+        }
+        current_dictionary = addNewWords(words, current_dictionary);
+        chrome.storage.sync.set({ 'neword_user_dictionary': current_dictionary }, function () { });
+        chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
             chrome.tabs.sendMessage(tabs[0].id, {
                 "message": "newWordAdded",
                 "keywords": words,
@@ -70,25 +69,25 @@ function removeWords(words, current_dictionary) {
  * @param {Array} words
  * @return {void}
  */
-function removeWordsFromDict(words){
+function removeWordsFromDict(words) {
     var current_dictionary = [];
     if (words.length < 0) {
         return;
     }
-    
-    chrome.storage.sync.get(['neword_user_dictionary'], function (data){
+
+    chrome.storage.sync.get(['neword_user_dictionary'], function (data) {
         var current_dictionary = [];
         if (data.neword_user_dictionary) {
             current_dictionary = data.neword_user_dictionary;
         }
         for (var i = 0; i < words.length; i++) {
             for (var j = 0; j < current_dictionary.length; j++) {
-                if (words[i] == current_dictionary[j]){
+                if (words[i] == current_dictionary[j]) {
                     current_dictionary.splice(j, 1);
                 }
             }
         }
-        chrome.storage.sync.set({'neword_user_dictionary': current_dictionary}, function(){});
+        chrome.storage.sync.set({ 'neword_user_dictionary': current_dictionary }, function () { });
         show_notification("Words have been successfully removed", words.toString());
         location.reload();
     });
