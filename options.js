@@ -21,7 +21,16 @@ $(function () {
             chrome.storage.sync.set({ "neword_user_new_words": selected_new_words }, function () {
                 addWordsToDict(selected_new_words)
             });
-        }
+        } 
+        location.reload();
+    });
+    $('#remove_words').click(function () {
+        var table_words = document.getElementById('dict_tbl');
+        var arrayWords = [];
+        $('input:checkbox:checked', table_words).each(function() {
+            arrayWords.push($(this).closest('tr').find('td:first').text());
+        }).get();
+        removeWordsFromDict(arrayWords);
     });
     chrome.storage.sync.get(["neword_user_dictionary"], function (data) {
         $('#current_dictionary').text(data.neword_user_dictionary);

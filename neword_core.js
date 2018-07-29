@@ -53,13 +53,46 @@ function addWordsToDict(words)
                 "keywords": words,
             });
         });
-            
     });
-    
     show_notification("Words have been successfully added", words.toString());
     return true;
 }
+/**
+ * @param {Array} words
+ * @param {Array} current_dictionary
+ * @return {Array}
+ */
+function removeWords(words, current_dictionary) {
 
+}
+// Remove words from Dictionary storage
+/**
+ * @param {Array} words
+ * @return {void}
+ */
+function removeWordsFromDict(words){
+    var current_dictionary = [];
+    if (words.length < 0) {
+        return;
+    }
+    
+    chrome.storage.sync.get(['neword_user_dictionary'], function (data){
+        var current_dictionary = [];
+        if (data.neword_user_dictionary) {
+            current_dictionary = data.neword_user_dictionary;
+        }
+        for (var i = 0; i < words.length; i++) {
+            for (var j = 0; j < current_dictionary.length; j++) {
+                if (words[i] == current_dictionary[j]){
+                    current_dictionary.splice(j, 1);
+                }
+            }
+        }
+        chrome.storage.sync.set({'neword_user_dictionary': current_dictionary}, function(){});
+        show_notification("Words have been successfully removed", words.toString());
+        location.reload();
+    });
+}
 // synchronous function
 
 
