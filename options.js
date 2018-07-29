@@ -26,5 +26,11 @@ $(function() {
     });
     chrome.storage.sync.get(["neword_user_dictionary"], function(data){ 
         $('#current_dictionary').text(data.neword_user_dictionary);
+        var words = data.neword_user_dictionary;
+        var td = "<td>", tdc = "</td>";
+        for (var i = 0; i < words.length; i++) {
+            $('#dict_tbl').append("<tr>" +
+                td + words[i] + tdc  + "</tr>");
+        }
     });
 });
