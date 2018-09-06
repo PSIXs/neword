@@ -1,60 +1,92 @@
 <!DOCTYPE html>
-<href>
+<html>
 
-    <head>
-        <title> Options - NeWoRdS </title>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="stylesheet" href="assets/css/main.css">
-    </head>
+<head>
+  <title> Options - neword </title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
 
-    <body>
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4">
+        <h1><a id="Neword_0"></a>Neword</h1>
+        <p>Neword is the new to practise your new words without turning off browser</p>
+        <ul>
+          <li>Type new words to the dictionary</li>
+          <li>Browse the internet</li>
+          <li>Magic. Your words will be highlighted on pages automatically</li>
+        </ul>
+        <h1><a id="New_Features_7"></a>New Features!</h1>
+        <ul>
+          <li>This is a beta release, so everything is new</li>
+        </ul>
+        <h3><a id="Development_14"></a>Development</h3>
+        <p>Want to contribute? Great!<br> Follow this <a href="https://developer.chrome.com/extensions/devguide">documentation</a>
+          and<br> Open your favorite Terminal and run these commands.</p>
+        <pre><code class="language-sh">$ git <span class="hljs-built_in">clone</span> git@github.com:PSIXs/neword.git$ code .</code></pre>
+        <p>Rock it!</p>
+        <h3><a id="License_25"></a>License</h3>
+        <p>MIT<br>
+          <strong>Free Software, Hell Yeah!</strong></p>
+        <blockquote>
+          <p>Please write all your thoughts and ideas in our github page <a href="https://github.com/PSIXs/neword">here</a></p>
+        </blockquote>
+      </div>
 
+      <div class="col-md-8">
         <h3>
-            Add words
+          Add words
         </h3>
         <textarea id="new_words"></textarea>
         <button id="add_words">
-            Submit
+          Submit
         </button>
 
         <h3>
-            Choose your language
+          Choose your language
         </h3>
         <select id="lang_user">
-            <option value="russian">Russian</option>
-            <option value="kyrgyz">Kyrgyz</option>
+          <option value="russian">Russian</option>
+          <option value="kyrgyz">Kyrgyz</option>
         </select>
 
         <h3>
-            Choose your level of English or add your own dictionary:
+          Choose your level of English or add your own dictionary:
         </h3>
         <select id="lang_level">
-            <option value="beginner">Beginner</option>
-            <option value="medium">Medium</option>
-            <option value="upper">Upper</option>
+          <option value="beginner">Beginner</option>
+          <option value="medium">Medium</option>
+          <option value="upper">Upper</option>
         </select>
 
-        <h3>
-            Current Words
+        <h3 style="margin-bottom: 0px;">
+          Current Words
         </h3>
-        <table id="dict_tbl" style="margin-bottom: 0px;">
-            <tr>
-                <th>Word</th>
-                <th></th>
-            </tr>
+        <table class="table table-hover" id="dict_tbl" style="margin-bottom: 0px;">
+          <col width="80">
+          <tr>
+            <th></th>
+            <th></th>
+          </tr>
         </table>
         <button id="remove_words">
-            Remove
+          Remove
         </button>
-        </div>
+      </div>
 
-        <!-- Scripts -->
-        <script src="assets/js/jquery.min.js"></script>
-        <script src="assets/js/skel.min.js"></script>
-        <script src="assets/js/util.js"></script>
-        <script src="assets/js/main.js"></script>
-        <script src="neword_core.js"></script>
-        <script src="options.js"></script>
-    </body>
-</href>
+      <!-- now that we have used up all the 12 coloumbs in this row , lets go create a new "row class" , Alas in the same container -->
+    </div> <!-- end of row -->
+  </div> <!-- end of container -->
+</body>
+<!-- Scripts -->
+<script src="jquery.js"></script>
+<script src="neword_core.js"></script>
+<script src="options.js"></script>
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+</html>

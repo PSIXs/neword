@@ -1,0 +1,13 @@
+body {
+    min-width:300px;
+    max-width:1000px;
+}
+h3 {
+    color: navy;
+    background-color: aliceblue;
+    margin-bottom: 0px;
+}
+p {
+    line-height: 0px;
+    color: grey;
+}

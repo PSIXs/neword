@@ -19,7 +19,7 @@ $(function () {
         if (this.id == 'add_words') {
             var selected_new_words = $('#new_words').val();
             chrome.storage.sync.set({ "neword_user_new_words": selected_new_words }, function () {
-                addWordsToDict(selected_new_words)
+                addWordsToDict(selected_new_words);
             });
         }
         location.reload();
@@ -39,8 +39,7 @@ $(function () {
         for (var i = 0; i < words.length; i++) {
             $('#dict_tbl').append("<tr>" +
                 td + words[i] + tdc +
-                td + "<input type=\"checkbox\"/>" + tdc
-                + "</tr>");
+                td + "<input type=\"checkbox\"/>" + tdc + "</tr>");
         }
     });
 });
