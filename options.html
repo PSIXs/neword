@@ -23,8 +23,8 @@
           <li>This is a beta release, so everything is new</li>
         </ul>
         <h3><a id="Development_14"></a>Development</h3>
-        <p>Want to contribute? Great!<br> Follow this <a href="https://developer.chrome.com/extensions/devguide">documentation</a>
-          and<br> Open your favorite Terminal and run these commands.</p>
+        <p>Want to contribute? Great!<br> Follow this <a href="https://developer.chrome.com/extensions/devguide">documentation.</a>
+          <br> Open your favor ite Terminal and run these commands.</p>
         <pre><code class="language-sh">$ git <span class="hljs-built_in">clone</span> git@github.com:PSIXs/neword.git$ code .</code></pre>
         <p>Rock it!</p>
         <h3><a id="License_25"></a>License</h3>
@@ -36,44 +36,50 @@
       </div>
 
       <div class="col-md-8">
-        <h3>
-          Add words
-        </h3>
-        <textarea id="new_words"></textarea>
-        <button id="add_words">
-          Submit
-        </button>
+        <div class="well well-sm">
 
-        <h3>
-          Choose your language
-        </h3>
-        <select id="lang_user">
-          <option value="russian">Russian</option>
-          <option value="kyrgyz">Kyrgyz</option>
-        </select>
+          <h3>
+            Add words
+          </h3>
+          <textarea id="new_words"></textarea>
+          <button id="add_words">
+            Submit
+          </button>
 
-        <h3>
-          Choose your level of English or add your own dictionary:
-        </h3>
-        <select id="lang_level">
-          <option value="beginner">Beginner</option>
-          <option value="medium">Medium</option>
-          <option value="upper">Upper</option>
-        </select>
+          <h3>
+            Choose your language
+          </h3>
+          <select id="lang_user">
+            <option value="russian">Russian</option>
+            <option value="kyrgyz">Kyrgyz</option>
+          </select>
 
-        <h3 style="margin-bottom: 0px;">
-          Current Words
-        </h3>
-        <table class="table table-hover" id="dict_tbl" style="margin-bottom: 0px;">
-          <col width="80">
-          <tr>
-            <th></th>
-            <th></th>
-          </tr>
-        </table>
-        <button id="remove_words">
-          Remove
-        </button>
+          <h3>
+            Choose your level of English or add your own dictionary:
+          </h3>
+          <select id="lang_level">
+            <option value="beginner">Beginner</option>
+            <option value="medium">Medium</option>
+            <option value="upper">Upper</option>
+          </select>
+
+          <h3 style="margin-bottom: 0px;">
+            Current Words
+          </h3>
+          <div class="table-wrapper-scroll-y">
+            <table class="table table-hover" id="dict_tbl" style="margin-bottom: 0px;">
+              <col width="80">
+              <tr>
+                <th></th>
+                <th></th>
+              </tr>
+            </table>
+          </div>
+          <hr>
+          <button id="remove_words">
+            Remove
+          </button>
+        </div>  
       </div>
 
       <!-- now that we have used up all the 12 coloumbs in this row , lets go create a new "row class" , Alas in the same container -->
@@ -88,5 +94,13 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <!-- Latest compiled JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<style>
+.table-wrapper-scroll-y {
+  display: block;
+  max-height: 200px;
+  overflow-y: auto;
+  -ms-overflow-style: -ms-autohiding-scrollbar;
+}
+</style>
 
 </html>
