@@ -42,7 +42,7 @@
             Add words
           </h3>
           <textarea id="new_words"></textarea>
-          <button id="add_words">
+          <button class="btn btn-primary" id="add_words">
             Submit
           </button>
 
@@ -57,7 +57,7 @@
           <h3>
             Choose your level of English or add your own dictionary:
           </h3>
-          <select id="lang_level">
+          <select class="selectpicker" id="lang_level">
             <option value="beginner">Beginner</option>
             <option value="medium">Medium</option>
             <option value="upper">Upper</option>
@@ -67,7 +67,7 @@
             Current Words
           </h3>
           <div class="table-wrapper-scroll-y">
-            <table class="table table-hover" id="dict_tbl" style="margin-bottom: 0px;">
+            <table class="table table-responsive table-hover" id="dict_tbl" style="margin-bottom: 0px;">
               <col width="80">
               <tr>
                 <th></th>
@@ -76,10 +76,10 @@
             </table>
           </div>
           <hr>
-          <button id="remove_words">
+          <button class="btn btn-danger" id="remove_words">
             Remove
           </button>
-        </div>  
+        </div>
       </div>
 
       <!-- now that we have used up all the 12 coloumbs in this row , lets go create a new "row class" , Alas in the same container -->
@@ -95,12 +95,12 @@
 <!-- Latest compiled JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <style>
-.table-wrapper-scroll-y {
-  display: block;
-  max-height: 200px;
-  overflow-y: auto;
-  -ms-overflow-style: -ms-autohiding-scrollbar;
-}
+  .table-wrapper-scroll-y {
+    display: block;
+    max-height: 200px;
+    overflow-y: auto;
+    -ms-overflow-style: -ms-autohiding-scrollbar;
+  }
 </style>
 
 </html>
