@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+    $("#p1").mouseenter(function(){
+    	var old_text = $(this).text().split(" ");
+        var new_text = "";
+        for (var i=0; i<old_text.length; i++){
+        	var span_element = "<span title='your mouse is over " + old_text[i] + "'>" + old_text[i] + " </span>";
+            new_text += span_element;
+        }
+        $(this).text("").append(new_text);
+        /*$("span").mouseenter(function(){
+          var old_text = $(this).text();
+          var new_text = "<span style='color:blue'>" + old_text + " </span>";
+          $(this).text("").append(new_text);
+        });
+        $("span").mouseleave(function(){
+          var old_text = $(this).text();
+          var new_text = "<span>" + old_text + " </span>";
+          $(this).text("").append(new_text);
+        });*/
+    });
+});
+</script>
+</head>
+<body>
+
+<p id="p1">Enter this paragraph.</p>
+
+</body>
+</html>
+
