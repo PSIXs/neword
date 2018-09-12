@@ -1,8 +1,8 @@
 {
     "manifest_version": 2,
-    "name": "NeWords",
-    "version": "0.1",
-    "description": "NeW Way to practice NeWords",
+    "name": "Neword",
+    "version": "0.9",
+    "description": "Practice your words",
     "icons": {
         "128": "icon128.png",
         "48": "icon48.png",
@@ -11,7 +11,7 @@
     "browser_action": {
         "default_icon": "icon16.png",
         "default_popup": "popup.html",
-        "default_title": "NeWords"
+        "default_title": "Neword"
     },
     "options_page": "options.html",
     "background": {
