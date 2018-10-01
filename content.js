@@ -96,7 +96,7 @@ chrome.storage.sync.get(['neword_user_dictionary', 'neword_user_language_level',
         {
             "keywords": current_user_dictionary,
             "foreground": "#000000",
-            "background": "purple"
+            "background": "yellow"
         },      
         true
     );      
